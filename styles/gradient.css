@@ -1,0 +1,11 @@
+.orange-gradient {
+   background: linear-gradient(
+      to right, 
+      #FB923C 0%, 
+      #FFA053 20%, 
+      #FFA053 40%, 
+      #FB923C 60%, 
+      #FFA053 80%, 
+      #FB923C 100%
+   );
+}
