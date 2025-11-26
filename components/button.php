@@ -9,7 +9,7 @@ function Button($props) {
    
    $class = $props["class"] ?? "";
    $on_click = $props["on-click"] ?? "";
-   $data_content = $props["data-content"] ?? "";
+   $properties = $props["properties"] ?? "";
 
    $is_primary = $type === "primary";
    $is_secondary = $type === "secondary";
@@ -23,7 +23,7 @@ function Button($props) {
       };
 
       return "
-         <button data-content='" . $data_content . "' class='" . $class . "' onclick='" . $on_click . "' style='
+         <button " . $properties . " class='" . $class . "' onclick='" . $on_click . "' style='
             width: 100%;
             height: 36px;
             background: " . $color . ";
@@ -49,7 +49,7 @@ function Button($props) {
       };
 
       return "
-         <button data-content='" . $data_content . "' class='" . $class . "' onclick='" . $on_click . "' style='
+         <button " . $properties . " class='" . $class . "' onclick='" . $on_click . "' style='
             padding: 12px 12px;
             height: 36px;
             display: flex;

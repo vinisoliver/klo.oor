@@ -21,7 +21,7 @@ function Tabs($props) {
          "type" => $index === 0 ? "primary" : "secondary",
          "class" => 'tabs-btn',
          "on-click" => "updateTabsSection(this)",
-         "data-content" => $safe_content
+         "properties" => "data-content='" . $safe_content . "'"
       ]);
    }
    $buttons .= "</div>";
