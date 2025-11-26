@@ -1,6 +1,7 @@
 <html>
 <head>
    <link rel="stylesheet" href="../styles/global.css">
+   <title>Klo.oor | Entrar</title>
 </head>
 <body>
    <?php define("BASE_URL", "/klo.oor"); ?>
@@ -46,5 +47,3 @@
    </div>
 </body>
 </html>
-
-
