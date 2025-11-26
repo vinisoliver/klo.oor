@@ -9,7 +9,6 @@ function CallCard($props) {
    $employee_department = $props["employee_department"];
    $created_at = $props["created_at"];
 
-
    $status_text = match($props["status"]) {
       "CLOSED" => "ENCERRADA",
       "OPEN" => "ABERTA",
@@ -18,6 +17,7 @@ function CallCard($props) {
       "CLOSED" => Colors::$unavailable,
       "OPEN" => Colors::$available
    };
+   $status_is_open = $props["status"] === "OPEN";
 
    $call_details_href = "calls/details?callId=" . $call_id;
 
@@ -40,12 +40,23 @@ function CallCard($props) {
             <h5 style='" . GetTypograph("name") . "'>
                Chamada #" . $call_id . "
             </h5>
-            " . Button([
-               "icon" => Icon::$eye,
-               "type" => "normal-icon",
-               "on-click" => "window.location.href=this.dataset.href",
-               "properties" => "data-href='" . $call_details_href . "'"
-            ]) . "
+            <div style='
+               display: flex;
+               gap: 8px;
+            '>
+               " . Button([
+                  "icon" => Icon::$eye,
+                  "type" => "normal-icon",
+                  "on-click" => "window.location.href=this.dataset.href",
+                  "properties" => "data-href='" . $call_details_href . "'"
+               ]) . "
+               " . ($status_is_open ? Button([
+                  "icon" => Icon::$stamp,
+                  "type" => "destructive-icon",
+                  "properties" => "data-callid='" . $call_id . "'",
+                  "on-click" => "closeCallModalOpen(this.dataset.callid)"
+               ]) : "") . "
+            </div>
          </div>
 
          <div style='

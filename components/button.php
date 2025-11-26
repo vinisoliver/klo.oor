@@ -13,20 +13,22 @@ function Button($props) {
 
    $is_primary = $type === "primary";
    $is_secondary = $type === "secondary";
+   $is_destructive = $type === "destructive";
    $is_normal_icon = $type === "normal-icon";
    $is_destructive_icon = $type === "destructive-icon";
 
-   if ($is_primary || $is_secondary) {
-      $color =  match($type) {
+   if ($is_primary || $is_secondary || $is_destructive) {
+      $background_color =  match($type) {
          "primary" => Colors::$primary,
-         "secondary" => Colors::$secondary_background
+         "secondary" => Colors::$secondary_background,
+         "destructive" => Colors::$unavailable
       };
 
       return "
          <button " . $properties . " class='" . $class . "' onclick='" . $on_click . "' style='
             width: 100%;
             height: 36px;
-            background: " . $color . ";
+            background: " . $background_color . ";
             color: " . Colors::$foreground . ";
             border: none;
             border-radius: 8px;
