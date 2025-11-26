@@ -1,0 +1,21 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+}
+
+body {
+   background: #05051A;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+input {
+   outline: none;
+}
+
+input::placeholder {
+   color: #111827,
+}
