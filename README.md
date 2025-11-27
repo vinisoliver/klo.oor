@@ -50,6 +50,13 @@ Now all you have to do is run the server! The administrator password is:
 - Email: admin@gmail.com
 - Password: 1234
 
+## Para o professor...
+
+Nome dos integrantes:
+- Darci de Oliveira Filho
+- Maria Viviane Fernandes Honorato
+- Vinícius da Silva Oliveira
+
 ## Author
 
 ⚡ vinisoliver
