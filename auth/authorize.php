@@ -21,7 +21,7 @@ function authorize($role) {
       $isAuthorizedByEmployee = $harded_env["EMPLOYEE_AUTH_TOKEN"] === $token;
       
       if ($role === "manager" && $isAuthorizedByManager) { return; }
-      if ($role === "employee" && $isAuthorizedByEmployee) { return; }
+      if ($role === "employee" && $isAuthorizedByEmployee) { return $_SESSION['employee_id']; }
    }
 
    header("Location: /klo.oor");

@@ -36,7 +36,7 @@ if ($email === $manager_email && $password === $manager_password) {
 
 $db = include "../db/connect.php";
 
-$findEmployee = $db->prepare("SELECT email, password FROM employees WHERE email = ?");
+$findEmployee = $db->prepare("SELECT id, email, password FROM employees WHERE email = ?");
 $findEmployee->bind_param("s", $email);
 $findEmployee->execute();
 
@@ -45,6 +45,7 @@ $employee = $result->fetch_assoc();
 
 if ($employee && $password === $employee["password"]) {
    $_SESSION['auth_token'] = $employee_auth_token;
+   $_SESSION['employee_id'] = $employee["id"];
    header("Location: /klo.oor/pages/employee/calls.php");
    exit;
 }
