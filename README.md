@@ -40,6 +40,16 @@ The prototyping is here: [https://www.figma.com/design/NixiWPabFvgoUjlctjMWjd/kl
 - Equipment number (optional)
 - Problem description
 
+## How to run
+
+Start an Apache server for PHP and MySQL with XAMPP.
+
+Go to the MySQL control panel, look for the SQL tab, and paste the schema.sql file into the bd folder, then run it.
+
+Now all you have to do is run the server! The administrator password is:
+- Email: admin@gmail.com
+- Password: 1234
+
 ## Author
 
 ⚡ vinisoliver
