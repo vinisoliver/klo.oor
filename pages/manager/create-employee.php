@@ -1,6 +1,8 @@
 <html>
 <head>
    <link rel="stylesheet" href="../../styles/global.css">
+   <link rel="icon" href="../../assets/logo.svg" type="image/png">
+   <title>Klo.oor | Cadastrar funcionário</title>
 </head>
 <body>
    <?php define("BASE_URL", "/klo.oor"); ?>

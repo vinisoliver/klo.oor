@@ -1,6 +1,7 @@
 <html>
 <head>
    <link rel="stylesheet" href="../styles/global.css">
+   <link rel="icon" href="../../assets/logo.svg" type="image/png">
    <title>Klo.oor | Entrar</title>
 </head>
 <body>
