@@ -61,11 +61,13 @@
                      "calls" => getCalls([
                         "status" => "OPEN"
                      ]),
+                     "user_role" => "manager",
                   ]) ],
                   ["name" => "Encerrados", "content" => CallList([
                      "calls" => getCalls([
                         "status" => "CLOSED"
                      ]),
+                     "user_role" => "manager",
                   ]) ],
                ],
             ]),
