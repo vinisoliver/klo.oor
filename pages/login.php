@@ -4,6 +4,7 @@
    <title>Klo.oor | Entrar</title>
 </head>
 <body>
+   <?php session_start(); ?>
    <?php define("BASE_URL", "/klo.oor"); ?>
 
    <?php include "../components/button.php"; ?>

@@ -1,10 +1,19 @@
 <?php
 function authorize($role) {
-   session_start();
-   
+   if (isset($_SESSION['ultimo_acesso'])) {
+      $tempo_inativo = time() - $_SESSION['ultimo_acesso'];
+      if ($tempo_inativo > 60) {
+         session_unset();
+         session_destroy();
+         header("Location: /klo.oor");
+         exit;
+      }
+   }
+
+   $_SESSION['ultimo_acesso'] = time();
+
    if (isset($_SESSION['auth_token'])) { 
       $token = $_SESSION['auth_token'];
-      unset($_SESSION['auth_token']);
 
       $harded_env = include dirname(__DIR__) . "/env/harded.php";
       

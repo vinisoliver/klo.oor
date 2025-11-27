@@ -1,4 +1,14 @@
 <?php
+session_set_cookie_params([
+    'lifetime' => 60,
+    'path' => '/',
+    'secure' => false,
+    'httponly' => true,
+    'samesite' => 'Lax'
+]);
+
+$_SESSION['ultimo_acesso'] = time();
+
 session_start();
 
 $email = $_POST['email'] ?? null;
