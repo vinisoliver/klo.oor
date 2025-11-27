@@ -25,7 +25,9 @@ function CloseCallModal() {
             const btn = document.querySelector('#close-call-modal-btn');
             const callId = btn.dataset.callId;
 
-            fetch('../../api/close-call.php', {
+            const basePath = window.location.origin + '/klo.oor'
+
+            fetch(basePath + '/api/close-call.php', {
                method: 'POST',
                headers: {
                      'Content-Type': 'application/x-www-form-urlencoded'
@@ -36,7 +38,7 @@ function CloseCallModal() {
             .then(data => {
                if (data.success) {
                      closeCallModalClose();
-                     location.reload(); 
+                     location.reload();
                } else {
                      alert('Erro: ' + data.message);
                }

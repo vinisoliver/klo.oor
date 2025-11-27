@@ -6,6 +6,7 @@ include_once dirname(__DIR__) . "/calls/card.php";
 
 function CallList($props) {
    $calls = $props["calls"] ?? [];
+   $user_role = $props["user_role"] ?? null;
 
    $call_cards = "";
 
@@ -20,6 +21,7 @@ function CallList($props) {
          "equipament_name" => $call->equipament_name,
          "employee_name" => $call->employee_name,
          "employee_department" => $call->employee_department,
+         "user_role" => $user_role,
       ]);
    }
 

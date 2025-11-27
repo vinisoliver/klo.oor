@@ -3,6 +3,8 @@ include_once dirname(__DIR__) . "/../styles/colors.php";
 include_once dirname(__DIR__) . "/../styles/icons.php";
 
 function CallCard($props) {   
+   $user_role = $props["user_role"];
+
    $equipament_name = $props["equipament_name"];
    $call_id = $props["call_id"];
    $employee_name = $props["employee_name"];
@@ -18,8 +20,10 @@ function CallCard($props) {
       "OPEN" => Colors::$available
    };
    $status_is_open = $props["status"] === "OPEN";
+   $is_manager = $user_role === "manager" ? true : false;
+   $authorized_to_close = $is_manager && $status_is_open ? true : false;
 
-   $call_details_href = "calls/details?callId=" . $call_id;
+   $call_details_href = "call/details.php?callId=" . $call_id;
 
    return "
       <div style='
@@ -50,7 +54,7 @@ function CallCard($props) {
                   "on-click" => "window.location.href=this.dataset.href",
                   "properties" => "data-href='" . $call_details_href . "'"
                ]) . "
-               " . ($status_is_open ? Button([
+               " . ($authorized_to_close ? Button([
                   "icon" => Icon::$stamp,
                   "type" => "destructive-icon",
                   "properties" => "data-callid='" . $call_id . "'",
